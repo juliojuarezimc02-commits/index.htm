@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hormigonera National | Adoquines y Hormigón</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hormigonera National: especialistas en adoquines, hormigón y soluciones en pavimentos en Ambato - Ecuador.">
+  <style>
+    :root {
+      --color-primario: #e30613;   /* Rojo del logo */
+      --color-oscuro: #111827;
+      --color-claro: #f3f4f6;
+      --color-blanco: #ffffff;
+      --color-acento: #111827;     /* Negro / gris muy oscuro como acento */
+      --radius-xl: 18px;
+      --shadow-soft: 0 15px 40px rgba(15, 23, 42, 0.18);
+      --transition: 0.25s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #fef2f2, #f3f4f6, #e5e7eb);
+      color: #111827;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header y menú */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94), rgba(15, 23, 42, 0.9));
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-area img {
+      height: 46px;
+      width: auto;
+    }
+
+    .logo-text {
+      color: #f9fafb;
+    }
+
+    .logo-text span {
+      display: block;
+      font-size: 0.75rem;
+      color: #f97373;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    nav ul {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.95rem;
+      color: #e5e7eb;
+      position: relative;
+      padding-bottom: 3px;
+      transition: color var(--transition);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--color-primario), var(--color-acento));
+      transition: width var(--transition);
+    }
+
+    nav a:hover {
+      color: #f9fafb;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Botón cotizar en el menú */
+    .btn-nav {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid rgba(249, 250, 251, 0.2);
+      background: linear-gradient(90deg, var(--color-primario), #ff4b4b);
+      color: #f9fafb;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .btn-nav:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Botón menú móvil */
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: #f9fafb;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero-text {
+      animation: fadeUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 999px;
+      background: #000;
+      color: #e5e7eb;
+      font-size: 0.75rem;
+      margin-bottom: 0.9rem;
+      border: 1px solid rgba(248, 113, 113, 0.7);
+    }
+
+    .pill span.badge {
+      background: rgba(227, 6, 19, 0.15);
+      color: var(--color-primario);
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      border: 1px solid rgba(227, 6, 19, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 3vw + 1rem, 3rem);
+      color: #0f172a;
+      letter-spacing: -0.04em;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero h1 span {
+      color: var(--color-primario);
+    }
+
+    .hero p {
+      color: #4b5563;
+      font-size: 0.98rem;
+      max-width: 34rem;
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-highlight {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-highlight span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: #ffffffcc;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      padding: 0.75rem 1.35rem;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), color var(--transition);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-primario), #ff4b4b);
+      color: #f9fafb;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.8);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.04);
+      color: #111827;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+    }
+
+    .btn-secondary:hover {
+      background: #111827;
+      color: #f9fafb;
+      transform: translateY(-1px);
+    }
+
+    .hero-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .hero-metrics div strong {
+      display: block;
+      font-size: 1.2rem;
+      color: #0f172a;
+    }
+
+    /* Tarjeta 3D de adoquines */
+    .hero-visual {
+      position: relative;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #000000, #111827);
+      color: #e5e7eb;
+      border-radius: 24px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(248, 113, 113, 0.4), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(0, 0, 0, 0.6), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+    }
+
+    .hero-card-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-card h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-card p {
+      font-size: 0.82rem;
+      color: #e5e7eb;
+      margin-bottom: 1rem;
+    }
+
+    .pattern-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-bottom: 1rem;
+    }
+
+    .pattern-cell {
+      aspect-ratio: 1/1;
+      border-radius: 6px;
+      background: linear-gradient(135deg, rgba(148, 163, 184, 0.75), rgba(31, 41, 55, 0.9));
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.6);
+    }
+
+    .pattern-cell:nth-child(odd) {
+      transform: translateY(3px);
+      opacity: 0.92;
+    }
+
+    .pattern-cell:nth-child(even) {
+      transform: translateY(-3px);
+      opacity: 0.78;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.78rem;
+      color: #9ca3af;
+    }
+
+    .status-pill {
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(22, 163, 74, 0.16);
+      color: #bbf7d0;
+      border: 1px solid rgba(34, 197, 94, 0.5);
+      font-size: 0.72rem;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      background: #fee2e2;
+      color: #b91c1c;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.45);
+      transform: rotate(8deg);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* Secciones genéricas */
+    section {
+      max-width: 1100px;
+      margin: 0 auto 2.8rem;
+      padding: 0 1.25rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.6rem;
+      color: #111827;
+    }
+
+    .section-header p {
+      font-size: 0.9rem;
+      color: #6b7280;
+      max-width: 420px;
+    }
+
+    /* Servicios */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+
+    .service-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 1.1rem;
+      box-shadow: 0 10px 28px rgba(148, 163, 184, 0.28);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      transform: translateY(0);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(227, 6, 19, 0.06), rgba(0, 0, 0, 0.03));
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(148, 163, 184, 0.5);
+      border-color: rgba(227, 6, 19, 0.8);
+    }
+
+    .service-card:hover::after {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+      background: radial-gradient(circle at 0 0, #e30613, #000000);
+      color: #f9fafb;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-meta {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.04);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+    }
+
+    /* Proyectos */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.1rem;
+    }
+
+    .project-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.18);
+      background: #0f172a;
+      color: #e5e7eb;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .project-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.9;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .project-overlay {
+      position: relative;
+      padding: 0.9rem;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.88), transparent);
+      z-index: 1;
+    }
+
+    .project-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .project-card p {
+      font-size: 0.78rem;
+      color: #d1d5db;
+    }
+
+    .project-meta {
+      margin-top: 0.4rem;
+      font-size: 0.72rem;
+      color: #9ca3af;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .project-card:hover .project-img {
+      transform: scale(1.06);
+      opacity: 1;
+    }
+
+    /* Nosotros */
+    .about {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .about-main {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 1.2rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 12px 30px rgba(148, 163, 184, 0.35);
+    }
+
+    .about-main h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-main p {
+      font-size: 0.9rem;
+      color: #4b5563;
+      margin-bottom: 0.8rem;
+    }
+
+    .about-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: #4b5563;
+    }
+
+    .about-item {
+      display: flex;
+      gap: 0.4rem;
+      align-items: flex-start;
+    }
+
+    .about-item span {
+      font-size: 1rem;
+    }
+
+    .about-side {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .about-stat {
+      background: #000000;
+      color: #e5e7eb;
+      border-radius: 16px;
+      padding: 0.8rem 0.9rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .about-stat strong {
+      font-size: 1.3rem;
+      display: block;
+    }
+
+    .about-stat small {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .about-pill {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      border: 1px dashed rgba(148, 163, 184, 0.9);
+    }
+
+    /* Contacto */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    form {
+      background: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: 1.2rem;
+      box-shadow: 0 15px 35px rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: #374151;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      padding: 0.55rem 0.65rem;
+      font-family: inherit;
+      font-size: 0.85rem;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+      background: #f9fafb;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--color-primario);
+      box-shadow: 0 0 0 1px rgba(227, 6, 19, 0.42);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+
+    .form-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: #6b7280;
+      flex-wrap: wrap;
+    }
+
+    .contact-info-card {
+      background: #000000;
+      color: #e5e7eb;
+      border-radius: var(--radius-xl);
+      padding: 1rem;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    .contact-row span.icon {
+      font-size: 1.1rem;
+    }
+
+    .mini-map {
+      margin-top: 0.5rem;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      height: 150px;
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 1.5rem 1.25rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    footer span {
+      color: var(--color-primario);
+      font-weight: 600;
+    }
+
+    /* Animaciones */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50 {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Responsivo */
+    @media (max-width: 900px) {
+      .hero,
+      .about,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 700px) {
+      nav ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: #000000;
+        flex-direction: column;
+        padding: 0.75rem 1.25rem 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.25s ease;
+      }
+
+      nav ul.open {
+        max-height: 260px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .btn-nav {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-metrics {
+        gap: 1rem;
+      }
+
+      .hero-metrics div {
+        flex: 1 1 45%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo-area">
+        <!-- Reemplaza la ruta si tu logo tiene otro nombre -->
+        <img src="img/logo-hormigoneranacional.png" alt="Logo Hormigonera National">
+        <div class="logo-text">
+          <strong>HORMIGONERA NATIONAL</strong>
+          <span>CONCRETANDO SUS IDEAS</span>
+        </div>
+      </div>
+
+      <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
+
+      <nav>
+        <ul id="navList">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#contacto" class="btn-nav">Cotizar ahora</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="inicio" class="hero">
+    <div class="hero-text">
+      <div class="pill">
+        <span class="badge">Ambato - Ecuador</span>
+        Pavimentos, adoquines y hormigón con respaldo profesional.
+      </div>
+      <h1>Soluciones en <span>hormigón y adoquines</span> para proyectos duraderos.</h1>
+      <p>
+        Hormigonera National ofrece producción de hormigón y adoquines de alta resistencia, 
+        acompañados de un servicio técnico que garantiza calidad, seguridad y cumplimiento en obra.
+      </p>
+
+      <div class="hero-highlight">
+        <span>🧱 Adoquines de alta resistencia</span>
+        <span>🚚 Suministro y colocación</span>
+        <span>📐 Asesoría técnica en pavimentos</span>
+      </div>
+
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-primary">Solicitar cotización</a>
+        <a href="#proyectos" class="btn-secondary">Ver proyectos recientes →</a>
+      </div>
+
+      <div class="hero-metrics">
+        <div>
+          <strong>+150</strong>
+          proyectos ejecutados
+        </div>
+        <div>
+          <strong>+50k m²</strong>
+          de pavimento instalado
+        </div>
+        <div>
+          <strong>+10 años</strong>
+          de experiencia en el sector
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-content">
+          <div class="hero-badge">Control de calidad</div>
+          <h2>Diseño de pavimentos</h2>
+          <p>Optimizamos espesores, bases y patrones de adoquinado para garantizar durabilidad y buen drenaje.</p>
+
+          <div class="pattern-grid">
+            <!-- Simulación de un patrón de adoquines -->
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+            <div class="pattern-cell"></div>
+          </div>
+
+          <div class="hero-card-footer">
+            <span class="status-pill">Asesoría sin costo</span>
+            <span>Diseños adaptados a tránsito peatonal y vehicular</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="section-header">
+      <div>
+        <h2>Servicios</h2>
+        <p>Integramos producción, suministro y colocación para que tu proyecto avance sin contratiempos.</p>
+      </div>
+      <p>Trabajamos con especificaciones técnicas y normas de construcción para garantizar resistencia y durabilidad.</p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <div class="service-icon">🧱</div>
+        <h3>Fabricación de adoquines</h3>
+        <p>
+          Producción de adoquines de concreto en diferentes formatos y colores, con control de calidad permanente.
+        </p>
+        <div class="service-meta">
+          <span class="tag">Peatonal y vehicular</span>
+          <span>Alta resistencia</span>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">🚚</div>
+        <h3>Suministro y colocación</h3>
+        <p>
+          Transporte, descarga y colocación profesional de adoquines y hormigón en obra, optimizando tiempos de ejecución.
+        </p>
+        <div class="service-meta">
+          <span class="tag">Proyectos urbanos</span>
+          <span>Equipos propios</span>
+        </div>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">📐</div>
+        <h3>Diseño y asesoría técnica</h3>
+        <p>
+          Acompañamiento en el diseño estructural del pavimento, espesores de base y selección del tipo de adoquín.
+        </p>
+        <div class="service-meta">
+          <span class="tag">Soporte a ingenieros</span>
+          <span>Memorias de cálculo</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROYECTOS -->
+  <section id="proyectos">
+    <div class="section-header">
+      <div>
+        <h2>Proyectos recientes</h2>
+        <p>Ejemplos de superficies que hemos transformado con adoquines y hormigón de calidad.</p>
+      </div>
+      <p>Desde patios residenciales hasta vías urbanas, adaptamos la solución a cada tipo de proyecto.</p>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-img" style="background-image: url('img/proyecto1.jpg');"></div>
+        <div class="project-overlay">
+          <h3>Vía urbana adoquinada</h3>
+          <p>Ejecución de calzada y veredas con adoquín vehicular y sistema de drenaje integrado.</p>
+          <div class="project-meta">
+            <span>+5,000 m²</span>
+            <span>Ambato</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-img" style="background-image: url('img/proyecto2.jpg');"></div>
+        <div class="project-overlay">
+          <h3>Patio residencial</h3>
+          <p>Diseño decorativo para patio y área social, combinando colores y patrones de adoquín.</p>
+          <div class="project-meta">
+            <span>250 m²</span>
+            <span>Proyecto residencial</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-img" style="background-image: url('img/proyecto3.jpg');"></div>
+        <div class="project-overlay">
+          <h3>Área industrial</h3>
+          <p>Pavimento de alto tránsito con hormigón y adoquín reforzado para circulación de maquinaria.</p>
+          <div class="project-meta">
+            <span>Zona industrial</span>
+            <span>Alto tránsito</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <div class="section-header">
+      <div>
+        <h2>Nosotros</h2>
+        <p>Hormigonera National: un equipo comprometido con la calidad en cada metro cúbico y cada adoquín.</p>
+      </div>
+      <p>Cuidamos todo el proceso: desde la selección de materias primas hasta el acabado final en obra.</p>
+    </div>
+
+    <div class="about">
+      <div class="about-main">
+        <h3>Concretando sus ideas</h3>
+        <p>
+          Nuestra experiencia en hormigón y adoquines nos permite ofrecer soluciones confiables para proyectos
+          residenciales, comerciales e infraestructurales en Ambato y sus alrededores.
+        </p>
+        <p>
+          Acompañamos a arquitectos, ingenieros y constructores en la definición del tipo de pavimento más adecuado,
+          considerando cargas, clima y vida útil esperada.
+        </p>
+
+        <div class="about-list">
+          <div class="about-item">
+            <span>🔍</span>
+            <div>
+              <strong>Calidad controlada</strong><br>
+              Procesos de dosificación y revisión constantes para asegurar resistencia.
+            </div>
+          </div>
+          <div class="about-item">
+            <span>⏱️</span>
+            <div>
+              <strong>Entrega oportuna</strong><br>
+              Coordinamos producción y logística para cumplir tus cronogramas.
+            </div>
+          </div>
+          <div class="about-item">
+            <span>🤝</span>
+            <div>
+              <strong>Relación a largo plazo</strong><br>
+              Buscamos ser tu aliado en más de un proyecto.
+            </div>
+          </div>
+          <div class="about-item">
+            <span>📍</span>
+            <div>
+              <strong>Cobertura local</strong><br>
+              Atención a Ambato y sectores cercanos de la Panamericana Sur.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-side">
+        <div class="about-stat">
+          <strong>+10 años</strong>
+          <small>trabajando con hormigón y adoquines en la región.</small>
+        </div>
+        <div class="about-pill">
+          “Cada proyecto es una oportunidad para dejar una superficie segura, resistente y estéticamente limpia.”
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="section-header">
+      <div>
+        <h2>Contacto y cotizaciones</h2>
+        <p>Compártenos los datos de tu proyecto y te responderemos a la brevedad.</p>
+      </div>
+      <p>La mayoría de consultas se responden en menos de 24 horas hábiles.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form>
+        <div class="form-row">
+          <div>
+            <label for="nombre">Nombre completo*</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+          </div>
+          <div>
+            <label for="telefono">Teléfono / WhatsApp*</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="0960..." required>
+          </div>
+        </div>
+
+        <div class="form-row" style="margin-top: 0.6rem;">
+          <div>
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com">
+          </div>
+          <div>
+            <label for="tipo">Tipo de proyecto*</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Selecciona una opción</option>
+              <option value="adoquines">Pavimento con adoquines</option>
+              <option value="hormigon">Pavimento de hormigón</option>
+              <option value="mixto">Mixto (hormigón + adoquines)</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          <label for="metros">Área aproximada (m²)</label>
+          <input type="number" id="metros" name="metros" placeholder="Ej. 120">
+        </div>
+
+        <div style="margin-top: 0.6rem;">
+          <label for="mensaje">Detalles del proyecto*</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Ubicación, tipo de tránsito, plazo, etc." required></textarea>
+        </div>
+
+        <div class="form-footer">
+          <button type="submit" class="btn-primary">Enviar solicitud</button>
+          <span>*Formulario demostrativo. Configura el envío con tu proveedor de formularios o correo.</span>
+        </div>
+      </form>
+
+      <div class="contact-info-card">
+        <div class="contact-row">
+          <span class="icon">📍</span>
+          <div>
+            <strong>Dirección</strong><br>
+            Panamericana Sur Km 8.5<br>
+            Desvío a Cevallos<br>
+            Ambato - Ecuador
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <span class="icon">📞</span>
+          <div>
+            <strong>Teléfonos</strong><br>
+            0960207777 - 0990750813
+          </div>
+        </div>
+
+        <div class="contact-row">
+          <span class="icon">✉️</span>
+          <div>
+            <strong>Correo</strong><br>
+            info.hormigoneranacional@gmail.com
+          </div>
+        </div>
+
+        <div class="mini-map">
+          Aquí puedes insertar un mapa de Google Maps<br>
+          (Panamericana Sur Km 8.5, desvío a Cevallos, Ambato - Ecuador).
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © <span id="year"></span> Hormigonera National. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.getElementById('navList');
+
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('open');
+    });
+
+    // Cerrar menú móvil al hacer clic en un enlace
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
