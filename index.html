@@ -16,6 +16,50 @@
       --shadow-soft: 0 15px 40px rgba(15, 23, 42, 0.18);
       --transition: 0.25s ease;
     }
+.accordion details {
+  background: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 0.8rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 10px 25px rgba(148, 163, 184, 0.25);
+  transition: all 0.25s ease;
+}
+
+.accordion summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #111827;
+  font-size: 0.95rem;
+  list-style: none;
+}
+
+.accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.accordion summary::after {
+  content: "➕";
+  float: right;
+}
+
+.accordion details[open] summary::after {
+  content: "➖";
+}
+
+.accordion-content {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.accordion-content ul {
+  padding-left: 1rem;
+}
+
+.accordion-content li {
+  margin-bottom: 0.35rem;
+}
 
     * {
       box-sizing: border-box;
@@ -856,6 +900,7 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#servicios">Servicios</a></li>
           <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#productos">Productos</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#contacto">Contacto</a></li>
           <li><a href="#contacto" class="btn-nav">Cotizar ahora</a></li>
@@ -1037,6 +1082,75 @@
       </article>
     </div>
   </section>
+
+  <section id="productos">
+  <div class="section-header">
+    <div>
+      <h2>Adoquines – Fichas técnicas</h2>
+      <p>Especificaciones técnicas de nuestros adoquines de hormigón vibroprensado.</p>
+    </div>
+    <p>Productos fabricados bajo normas INEN.</p>
+  </div>
+
+  <div class="accordion">
+
+    <!-- ADOQUÍN 10X20X6 -->
+    <details>
+      <summary>Adoquín de hormigón 10 × 20 × 6 cm</summary>
+      <div class="accordion-content">
+        <ul>
+          <li><strong>Dimensiones:</strong> 10 × 20 × 6 cm (también x5 cm)</li>
+          <li><strong>Resistencia a la compresión:</strong> 350 – 400 kg/cm² (INEN 30-40)</li>
+          <li><strong>Absorción de agua:</strong> ≤ 6 %</li>
+          <li><strong>Tolerancia dimensional:</strong> ± 5 mm</li>
+          <li><strong>Tipo de fabricación:</strong> Vibroprensado bicapa</li>
+          <li><strong>Peso por unidad:</strong> 2,5 kg</li>
+          <li><strong>Rendimiento:</strong> 50 unidades por m²</li>
+          <li><strong>Colores:</strong> Gris, rojo, negro, amarillo o personalizados</li>
+          <li><strong>Usos recomendados:</strong> Aceras, estacionamientos, plazas, parques y calles de tráfico liviano y pesado</li>
+          <li><strong>Presentación:</strong> Paletizado (17 m² por palet – 850 unidades)</li>
+          <li><strong>Mantenimiento:</strong> Limpieza con agua y cepillo. Aplicar sellador protector</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ADOQUÍN KIT -->
+    <details>
+      <summary>Adoquín KIT</summary>
+      <div class="accordion-content">
+        <ul>
+          <li><strong>Dimensiones:</strong> 24×24 cm / 16×24 cm / 16×16 cm (espesores x5, x6, x7)</li>
+          <li><strong>Resistencia a la compresión:</strong> 300 – 350 – 400 kg/cm² (INEN 1485)</li>
+          <li><strong>Absorción de agua:</strong> ≤ 6 %</li>
+          <li><strong>Peso por m²:</strong> 130 kg</li>
+          <li><strong>Rendimiento:</strong> Kit de 0,3456 m²</li>
+          <li><strong>Acabado superficial:</strong> Liso, antideslizante</li>
+          <li><strong>Colores:</strong> Gris, rojo, negro, amarillo o personalizados</li>
+          <li><strong>Usos:</strong> Aceras, plazas, estacionamientos y tránsito liviano y pesado</li>
+          <li><strong>Tipo de fabricación:</strong> Vibroprensado bicapa</li>
+        </ul>
+      </div>
+    </details>
+
+    <!-- ADOQUÍN 30X30 -->
+    <details>
+      <summary>Adoquín cuadrado 30 × 30</summary>
+      <div class="accordion-content">
+        <ul>
+          <li><strong>Dimensiones:</strong> 30×30 cm (espesores x5, x6, x7)</li>
+          <li><strong>Resistencia a la compresión:</strong> 300 – 350 – 400 kg/cm² (INEN 1485)</li>
+          <li><strong>Absorción de agua:</strong> ≤ 6 %</li>
+          <li><strong>Peso por m²:</strong> 130 kg</li>
+          <li><strong>Rendimiento:</strong> 11 unidades por m²</li>
+          <li><strong>Acabado:</strong> Liso, antideslizante</li>
+          <li><strong>Colores:</strong> Gris, rojo, negro, amarillo o personalizados</li>
+          <li><strong>Usos:</strong> Aceras, estacionamientos, plazas y calles</li>
+        </ul>
+      </div>
+    </details>
+
+  </div>
+</section>
 
   <!-- NOSOTROS -->
   <section id="nosotros">
